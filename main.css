@@ -1,0 +1,31 @@
+main {
+  max-width: 21.59cm;
+  margin: auto;
+}
+
+.list-departments {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+  gap: 10px;
+  row-gap: 13px;
+  padding: 0;
+}
+
+.list-departments li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.list-departments li span {
+  margin: 0 5px 0 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  background-color: #f1f1f1;
+}
+
+#roles-by-department div {
+  margin: 20px 0;
+}

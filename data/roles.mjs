@@ -478,7 +478,7 @@ export const data = {
         {
           name: "Productor ejecutivo",
           description:
-            "Responsable de supervisar la producción en un nivel estratégico administrativo y financiero. Asegura la financiación, viabilidad y éxito general del proyecto. Participa desde el el desarrollo hasta la finalización del proyecto audiovisual.",
+            "Responsable de supervisar la producción en un nivel estratégico administrativo y financiero. Asegura la financiación, viabilidad y éxito general del proyecto. Participa desde el desarrollo hasta la finalización del proyecto audiovisual.",
           responsibilities: [
             "Obtener y gestionar la financiación del proyecto.",
             "Asegurar la aprobación del presupuesto general y supervisar su correcta ejecución.",
