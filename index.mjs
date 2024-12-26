@@ -40,19 +40,25 @@ const mainFlow = async () => {
           <dt><b>${currentValue.name}</b></dt> 
         <dd>
           ${currentValue.description}
+          <p><b>Responsabilidades</b></p>
           <ul>
           ${currentValue.responsibilities.reduce(
             (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
             ""
           )}
-            </ul>
-            </dd>
-            `),
+          </ul>
+          <p><b>Conocimiento</b></p>
+          <ul>
+          ${currentValue.knowledge.reduce(
+            (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
+            ""
+          )}
+          </ul>
+        </dd>`),
           ""
         )}
         </dl>
-      </div>
-      `)
+      </div>`)
   );
 
   rolesByDepartment.innerHTML = contentForRoles;
