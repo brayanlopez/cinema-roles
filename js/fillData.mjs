@@ -1,14 +1,14 @@
 import { data } from "../data/roles.mjs";
 
-const getData = async () => {
-  try {
-    const response = await fetch("../data/roles.json");
-    return await response.json();
-  } catch (error) {
-    console.log(error);
-    return -1;
-  }
-};
+// const getData = async () => {
+//   try {
+//     const response = await fetch("../data/roles.json");
+//     return await response.json();
+//   } catch (error) {
+//     console.log(error);
+//     return -1;
+//   }
+// };
 
 export const fillData = async () => {
   // const data = await getData();
