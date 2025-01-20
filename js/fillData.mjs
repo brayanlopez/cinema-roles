@@ -1,6 +1,7 @@
+import { data } from "../data/roles.mjs";
+
 const getData = async () => {
   try {
-    // import { data } from "./roles.mjs";
     const response = await fetch("../data/roles.json");
     return await response.json();
   } catch (error) {
@@ -10,7 +11,7 @@ const getData = async () => {
 };
 
 export const fillData = async () => {
-  const data = await getData();
+  // const data = await getData();
 
   const departments = document.getElementById("Departments");
 
