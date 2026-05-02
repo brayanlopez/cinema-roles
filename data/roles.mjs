@@ -2,6 +2,7 @@ export const data = {
   departments: [
     {
       name: "Departamento de dirección",
+      icon: "🎬",
       description:
         "Es responsable de la visión artística y narrativa de la producción. Lidera las decisiones clave sobre cómo contar la historia, colaborando con los equipos técnicos y creativos para garantizar que todos los elementos se alineen con el concepto del director.",
       members: [
@@ -67,6 +68,7 @@ export const data = {
     },
     {
       name: "Departamento de fotografía",
+      icon: "📷",
       description:
         "Se encarga de la estética visual de la producción. Incluye la iluminación, composición, manejo de cámaras y la captura de las imágenes. Trabaja bajo la dirección del director de fotografía (DOP) para crear el look visual deseado y traducir la visión del director en imágenes.",
       members: [
@@ -171,6 +173,7 @@ export const data = {
     },
     {
       name: "Departamento de maquinistas",
+      icon: "🔧",
       description:
         "Responsable de la instalación, operación y mantenimiento de los equipos mecánicos necesarios para las cámaras y la iluminación en un set de rodaje. Su trabajo incluye manejar grúas, rieles, dollys, trípodes y otros sistemas que permitan movimientos de cámara fluidos y estables, además de colaborar con el equipo de iluminación para montar estructuras de soporte.",
       members: [
@@ -273,6 +276,7 @@ export const data = {
     },
     {
       name: "Departamento de arte",
+      icon: "🎨",
       description:
         "Diseña y supervisa todos los elementos visuales de la producción, como los escenarios, utilería, vestuario y maquillaje. Es el encargado de crear los entornos que transportan al espectador al mundo narrativo de la historia.",
       members: [
@@ -397,6 +401,7 @@ export const data = {
     },
     {
       name: "Departamento de sonido",
+      icon: "🔊",
       description:
         "Diseña, graba, edita y mezcla todos los elementos sonoros de la producción. Esto incluye diálogos, música, efectos de sonido y ambientes. Su objetivo es enriquecer la narrativa a través del diseño sonoro, creando atmósferas y reforzando las emociones de la historia",
       members: [
@@ -454,6 +459,7 @@ export const data = {
     },
     {
       name: "Departamento de producción",
+      icon: "💼",
       description:
         "Coordina y supervisa todos los aspectos logísticos y administrativos del proyecto; desde la preproducción hasta la postproducción. Garantiza que el proyecto se mantenga dentro del presupuesto y el cronograma, mientras proporciona los recursos necesarios para que todos los demás departamentos puedan cumplir con sus objetivos.",
       members: [
@@ -503,9 +509,15 @@ export const data = {
           name: "Gerente de producción",
           description:
             "Responsable de la organización diaria con cada departamento en el set de rodaje. Es el encargado de la contratación del personal y proveedores del material requerido.",
-          responsibilities: [],
+          responsibilities: [
+            "Coordinar las necesidades diarias de cada departamento en el set.",
+            "Gestionar la contratación de personal y proveedores.",
+            "Supervisar la logística de suministros y equipos necesarios.",
+            "Asegurar el cumplimiento de los horarios y cronogramas de rodaje.",
+            "Resolver problemas operativos que surjan durante la producción.",
+          ],
           knowledge: ["Negociación", "Organización", "Planeación"],
-          skills: [],
+          skills: ["Liderazgo", "Comunicación", "Gestión de recursos"],
           examples: [],
         },
         {
@@ -538,9 +550,18 @@ export const data = {
           name: "Productor asociado",
           description:
             "Pertenece a una empresa externa que colabora con la planeación del proyecto, pero no su ejecución",
-          responsibilities: [],
-          knowledge: [],
-          skills: [],
+          responsibilities: [
+            "Colaborar en la planeación estratégica del proyecto.",
+            "Aportar recursos o servicios específicos para la producción.",
+            "Asesorar en aspectos técnicos o creativos según su especialidad.",
+            "Facilitar contactos y alianzas estratégicas para el proyecto.",
+          ],
+          knowledge: [
+            "Gestión de proyectos",
+            "Industria audiovisual",
+            "Planificación estratégica",
+          ],
+          skills: ["Negociación", "Relacionamiento", "Visión estratégica"],
           examples: [],
         },
         {
@@ -573,15 +594,26 @@ export const data = {
           name: "Gerente de unidad",
           description:
             "Encargado de la logística en el set de rodaje y lo necesario para tener un campamento. Es el equivalente a un equipo de recursos humanos en el set.",
-          responsibilities: [],
-          knowledge: [],
-          skills: [],
+          responsibilities: [
+            "Gestionar la logística del campamento base y alojamiento del equipo.",
+            "Coordinar el transporte y alimentación del personal.",
+            "Supervisar la seguridad e higiene en el set de rodaje.",
+            "Gestionar los recursos humanos y resolver conflictos laborales.",
+            "Asegurar el cumplimiento de normativas laborales y de seguridad.",
+          ],
+          knowledge: ["Recursos humanos", "Logística", "Normativas laborales"],
+          skills: [
+            "Organización",
+            "Gestión de personal",
+            "Resolución de conflictos",
+          ],
           examples: [],
         },
       ],
     },
     {
       name: "Departamento de postproducción",
+      icon: "✂️",
       description:
         "Transforma el material filmado en el producto final. Incluye edición, corrección de color, efectos visuales, mezcla de sonido y la integración de música. Asegura que todos los elementos se combinen de manera cohesiva para transmitir la historia de forma clara y atractiva.",
       members: [

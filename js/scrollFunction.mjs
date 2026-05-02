@@ -1,6 +1,6 @@
 /**
  * When the user scrolls down 20px from the top of the document, show the button
- **/
+ * **/
 function scrollFunction(mybutton) {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.display = "block";
@@ -19,6 +19,8 @@ function topFunction() {
 
 export const addScroll2TopFunction = () => {
   let mybutton = document.getElementById("scrollToTopButton");
+  if (!mybutton) return;
+
   window.onscroll = function () {
     scrollFunction(mybutton);
   };

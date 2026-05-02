@@ -10,7 +10,7 @@ import { data } from "../data/roles.mjs";
 //   }
 // };
 
-export const fillData = async () => {
+export const fillData = () => {
   // const data = await getData();
 
   const departments = document.getElementById("Departments");
@@ -18,11 +18,11 @@ export const fillData = async () => {
   departments.innerHTML = `<ul class="list-departments">${data.departments.reduce(
     (accumulator, currentValue) =>
       accumulator.concat(`
-        <li class="card">
-          <span class="material-symbols-outlined">photo_camera</span>
-          ${currentValue.name}
+        <li class="card" role="listitem" data-department="${currentValue.name}">
+          <span class="dept-icon" aria-hidden="true">${currentValue.icon || "📷"}</span>
+          <span>${currentValue.name}</span>
         </li>`),
-    ""
+    "",
   )}</ul>`;
 
   const rolesByDepartment = document.getElementById("roles-by-department");
@@ -31,35 +31,53 @@ export const fillData = async () => {
   data.departments.forEach(
     (element) =>
       (contentForRoles += `
-      <div class="card">
-        <h3>${element.name}</h3>
+      <div class="card department-card" data-department="${element.name}">
+        <h3><span class="dept-icon" aria-hidden="true">${element.icon || "📷"}</span> ${element.name}</h3>
         <p>${element.description}</p>
         <dl>
         ${element.members.reduce(
           (accumulator, currentValue) =>
             accumulator.concat(`
-          <dt><b>${currentValue.name}</b></dt> 
-        <dd>
-          ${currentValue.description}
-          <p><b>Responsabilidades</b></p>
-          <ul>
-          ${currentValue.responsibilities.reduce(
-            (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
-            ""
-          )}
-          </ul>
-          <p><b>Conocimiento</b></p>
-          <ul>
-          ${currentValue.knowledge.reduce(
-            (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
-            ""
-          )}
-          </ul>
+          <dt><b>${currentValue.name}</b> <button class="bookmark-btn" data-role="${currentValue.name}" aria-label="Guardar ${currentValue.name} como favorito" title="Guardar como favorito">☆</button></dt>
+        <dd class="role-details" data-role="${currentValue.name}">
+          <p>${currentValue.description}</p>
+          <button class="view-details-btn" data-role-name="${currentValue.name}" aria-label="Ver detalles de ${currentValue.name}">Ver detalles</button>
+          <div class="details-hidden" style="display:none;">
+            <p><b>Responsabilidades</b></p>
+            <ul>
+            ${currentValue.responsibilities.reduce(
+              (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
+              "",
+            )}
+            </ul>
+            <p><b>Conocimiento</b></p>
+            <ul>
+            ${currentValue.knowledge.reduce(
+              (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
+              "",
+            )}
+            </ul>
+            <p><b>Habilidades</b></p>
+            <ul>
+            ${currentValue.skills.reduce(
+              (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
+              "",
+            )}
+            </ul>
+            ${
+              currentValue.examples && currentValue.examples.length > 0
+                ? `<p><b>Ejemplos</b></p><ul>${currentValue.examples.reduce(
+                    (accumulator, cv) => accumulator.concat(`<li>${cv}</li>`),
+                    "",
+                  )}</ul>`
+                : ""
+            }
+          </div>
         </dd>`),
-          ""
+          "",
         )}
         </dl>
-      </div>`)
+      </div>`),
   );
 
   rolesByDepartment.innerHTML = contentForRoles;

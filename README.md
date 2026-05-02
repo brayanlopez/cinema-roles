@@ -44,6 +44,7 @@ cinema-roles/
 No requiere proceso de build ni dependencias. Simplemente abre `index.html` en el navegador.
 
 Para desarrollo local, puedes usar:
+
 - Extensión Live Server en VS Code
 - Cualquier servidor HTTP local
 

@@ -1,29 +1,91 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="es" data-theme="light">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Cinema roles</title>
     <link rel="stylesheet" href="./css/main.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=photo_camera"
-    />
+
   </head>
   <body>
-    <main>
+    <header role="banner">
       <h1>Roles en el cine</h1>
-      <div>
-        <h2>Departamentos</h2>
-        <div id="Departments"></div>
+      <div
+        class="controls"
+        role="search"
+        aria-label="Controles de búsqueda y filtrado"
+      >
+        <input
+          type="search"
+          id="searchInput"
+          placeholder="Buscar roles..."
+          aria-label="Buscar roles por nombre, habilidades o conocimientos"
+          autocomplete="off"
+        />
+        <select id="departmentFilter" aria-label="Filtrar por departamento">
+          <option value="">Todos los departamentos</option>
+          <option value="Departamento de dirección">Dirección</option>
+          <option value="Departamento de fotografía">Fotografía</option>
+          <option value="Departamento de maquinistas">Maquinistas</option>
+          <option value="Departamento de arte">Arte</option>
+          <option value="Departamento de sonido">Sonido</option>
+          <option value="Departamento de producción">Producción</option>
+          <option value="Departamento de postproducción">Postproducción</option>
+        </select>
+        <button id="showBookmarksBtn" aria-label="Ver solo favoritos">
+          Ver favoritos
+        </button>
+        <button id="clearSearch" aria-label="Limpiar búsqueda y filtros">
+          Limpiar
+        </button>
+        <button id="themeToggle" aria-label="Activar modo oscuro">
+          🌙 Modo oscuro
+        </button>
       </div>
-      <div>
-        <h2>Roles por departamento</h2>
-        <div id="roles-by-department"></div>
-      </div>
+    </header>
+
+    <main>
+      <section aria-labelledby="dept-heading">
+        <h2 id="dept-heading">Departamentos</h2>
+        <div
+          id="Departments"
+          role="list"
+          aria-label="Lista de departamentos"
+        ></div>
+      </section>
+
+      <section aria-labelledby="roles-heading">
+        <h2 id="roles-heading">Roles por departamento</h2>
+        <div
+          id="roles-by-department"
+          role="region"
+          aria-label="Roles organizados por departamento"
+        ></div>
+      </section>
     </main>
 
-    <button id="scrollToTopButton" title="Go to top">Top</button>
+    <div
+      id="roleModal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-labelledby="modal-title"
+    >
+      <div class="modal-content" role="document">
+        <button class="modal-close" aria-label="Cerrar modal">&times;</button>
+        <h2 id="modal-title"></h2>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <button
+      id="scrollToTopButton"
+      title="Ir arriba"
+      aria-label="Volver al inicio de la página"
+    >
+      Top
+    </button>
 
     <script src="./js/index.mjs" type="module"></script>
   </body>
